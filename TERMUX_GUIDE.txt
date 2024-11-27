@@ -1,0 +1,78 @@
+OSINTGRAM TERMUX GUIDE
+=====================
+Modified by Amulya Srivastava (2024)
+Original tool by Datalux
+
+
+Quick Setup
+----------
+1. Open Termux
+2. Run these commands:
+
+   pkg update && pkg upgrade
+   pkg install git
+   git clone https://github.com/Datalux/Osintgram
+   cd Osintgram
+   bash termux_setup.sh
+
+Basic Usage
+----------
+1. Edit your credentials:
+   nano config/credentials.ini
+   (Add your Instagram username and password)
+
+2. Run the tool:
+   python3 main.py <target_username>
+
+3. Available commands in the tool:
+   - list          : Show all commands
+   - info          : Get target info
+   - followers     : Get target followers
+   - followings    : Get users followed by target
+   - stories       : Download target's stories
+   - propic        : Download profile picture
+   - photos        : Download target's photos
+   - FILE=y        : Enable saving to files
+   - exit          : Quit the program
+
+Tips for Termux
+--------------
+1. To copy text: Hold and select text
+2. To paste: Tap screen with three fingers
+3. To see downloaded files:
+   - They are saved in the 'output' folder
+   - Use a file manager to access them
+   - Or use: termux-setup-storage to access storage
+
+Troubleshooting
+--------------
+1. If you get "command not found":
+   - Make sure you're in the Osintgram directory
+   - Run: cd Osintgram
+
+2. If you get login errors:
+   - Check your credentials in config/credentials.ini
+   - Make sure you can log into Instagram website
+   - Try logging out and back in on Instagram website
+
+3. If Python gives errors:
+   - Run: pip install -r requirements.txt
+   - Make sure you have internet connection
+
+4. If files aren't saving:
+   - Check if 'output' directory exists
+   - Run: mkdir -p output
+
+Storage Access
+-------------
+To access downloaded files from your phone's storage:
+1. Run: termux-setup-storage
+2. Allow storage permission when prompted
+3. Files will be in: output/
+
+Remember
+--------
+- Use a valid Instagram account
+- Some features may not work on private accounts
+- Keep Termux and packages updated
+- Run pkg update periodically
